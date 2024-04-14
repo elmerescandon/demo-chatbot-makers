@@ -15,7 +15,7 @@ const Tag = ({user, type}: TagProps) => {
                     alt={user}
                     className="w-4 h-4 rounded-full"
                 />
-                <p>{user}</p>
+                <p className="font-semibold">{user}</p>
             </div>
         );
     } else {
@@ -26,7 +26,7 @@ const Tag = ({user, type}: TagProps) => {
                     alt={user}
                     className="w-4 h-4 rounded-full"
                 />
-                <p>{user}</p>
+                <p className="font-semibold">{user}</p>
             </div>
         );
     }
