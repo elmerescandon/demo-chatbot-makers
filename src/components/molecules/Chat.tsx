@@ -15,7 +15,13 @@ const Chat = ({type, user, message}: ChatProps) => {
             }`}
         >
             <Tag type={type} user={user} />
-            <p>{message}</p>
+            <p
+                className={`${
+                    type === "user" ? "text-right pr-4" : "text-left pl-8"
+                }`}
+            >
+                {message}
+            </p>
         </div>
     );
 };
