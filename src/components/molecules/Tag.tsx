@@ -3,16 +3,15 @@ import React from "react";
 
 type TagProps = {
     user: string;
-    imageURL: string;
     type: "chatbot" | "user";
 };
 
-const Tag = ({user, imageURL, type}: TagProps) => {
+const Tag = ({user, type}: TagProps) => {
     if (type === "chatbot") {
         return (
             <div className="flex gap-2 items-center">
                 <img
-                    src={imageURL}
+                    src="/catbot.svg"
                     alt={user}
                     className="w-4 h-4 rounded-full"
                 />
@@ -21,8 +20,12 @@ const Tag = ({user, imageURL, type}: TagProps) => {
         );
     } else {
         return (
-            <div className="flex gap-2 items-center">
-                <Image src={imageURL} alt={user} width={100} height={100} />
+            <div className="flex gap-2 items-center justify-end">
+                <img
+                    src="/user.svg"
+                    alt={user}
+                    className="w-4 h-4 rounded-full"
+                />
                 <p>{user}</p>
             </div>
         );
