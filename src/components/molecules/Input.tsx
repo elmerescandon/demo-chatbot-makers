@@ -17,6 +17,7 @@ const Input = ({handleNewMessage}: InputProps) => {
 
     const {
         register,
+        setValue,
         handleSubmit,
         formState: {errors, isSubmitting}, // Add isSubmitting to track loading state
     } = useForm({
@@ -26,6 +27,7 @@ const Input = ({handleNewMessage}: InputProps) => {
     const onSubmit = async (data: any) => {
         try {
             handleNewMessage(data.message);
+            setValue("message", "");
         } catch (error) {
             console.error(error);
         }
@@ -34,14 +36,14 @@ const Input = ({handleNewMessage}: InputProps) => {
     return (
         <form
             onSubmit={handleSubmit(onSubmit)}
-            className="w-full flex justify-between p-3 border border-neutral-300 rounded-lg"
+            className="w-full flex justify-between p-3 border border-neutral-300 rounded-lg gap-2"
         >
             <input
                 type="text"
                 id="message"
                 placeholder="Write your message..."
                 {...register("message")}
-                className="active:bg-white focus:outline-blue"
+                className="active:bg-white focus:outline-blue w-full"
             />
             {errors?.message?.message && (
                 <span>{errors.message.message as string}</span>
