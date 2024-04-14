@@ -12,11 +12,11 @@ const Header = ({status}: HeaderProps) => {
                 <p className="text-base font-bold">Chat</p>
                 <div
                     className={`${
-                        status === "offline" ? "bg-green-500" : "bg-red-500"
+                        status === "online" ? "bg-green-500" : "bg-red-500"
                     } w-2 h-2 rounded-full`}
                 ></div>
             </div>
-            <Tag user="Haikyuu" imageURL="/catbot.svg" type="chatbot" />
+            <Tag user="Haikyuu" type="chatbot" />
         </div>
     );
 };
