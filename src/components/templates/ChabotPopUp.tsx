@@ -10,14 +10,9 @@ const ChabotPopUp = () => {
     const [role, setRole] = useState<string>("user");
     const chatsMockup: IChatMessage[] = [
         {
-            type: "user",
-            user: "You",
-            message: "Hello",
-        },
-        {
             type: "chatbot",
             user: "Haikyuu",
-            message: "Hello, how can I help you",
+            message: "Hello, I'm Haikyuu. How can I help you?",
         },
     ];
 
